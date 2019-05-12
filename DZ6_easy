@@ -1,0 +1,72 @@
+# Задача-1: Написать класс для фигуры-треугольника, заданного координатами трех точек.
+# Определить методы, позволяющие вычислить: площадь, высоту и периметр фигуры.
+
+# Задача-2: Написать Класс "Равнобочная трапеция", заданной координатами 4-х точек.
+# Предусмотреть в классе методы:
+# проверка, является ли фигура равнобочной трапецией;
+# вычисления: длины сторон, периметр, площадь.
+
+class Figure:
+	def __init__(self, color):
+		self.color = color
+	def get_color(self):
+		return self.color
+	def info(self):
+		print("Figure")
+		print("Color: " + self.color)
+
+class Triangle(Figure):
+	def __init__(self, color, leg1 = 50, leg2 = 60, hypotenuse = 80):
+		super().__init__(color)
+		self.leg1 = leg1
+		self.leg2 = leg2
+		self.hypotenuse = hypotenuse
+	
+	def perimeter(self):
+		return (self.leg1+self.leg2+self.hypotenuse)/2
+	def square(self):
+		return (tri1.perimeter() * ((tri1.perimeter() - self.leg1) * (tri1.perimeter() - self.leg2) * (tri1.perimeter() - self.hypotenuse)))
+	def height (self):
+		return (2 * tri1.square / self.leg1)
+	def info(self):
+		print("Triangle")
+		print("Color: " + self.color)	
+		print("Leg1: " + str(self.leg1))
+		print("Leg2: " + str(self.leg2))
+		print("Hypotenuse: " + str(self.hypotenuse))
+figl1 = Figure("yellow")
+figl1.info()
+
+print()
+	
+tri1 = Triangle("yellow", 20, 50, 59)
+tri1.info()
+
+class Trapezium (Figure):
+	def __init__(self, color, width1=60, width2=32, side=49):
+		super().__init__(color)
+		self.width1 = width1
+		self.width2 = width2
+		self.side = side
+	
+	def perimeter(self):
+		return (self.width1 + self.width2 + 2 * self.side)
+	def height(self):
+		return ((self.width1 - self.width2)/2)
+	def square(self):
+		return (((self.width1 + self.width2)/2) * trap1.height)
+	def info(self):
+		print("Trapezium")
+		print("Color: " + self.color)	
+		print("Width1: " + str(self.width1))
+		print("Width2: " + str(self.width2))
+		print("side: " + str(self.side))
+figl2 = Figure("blue")
+figl2.info()
+
+print()
+	
+trap1 = Trapezium("blue", 23, 56, 42)
+trap1.info()
+
+
